@@ -19,3 +19,4 @@ target
 .nrepl-port
 .cpcache/
 .lein*
+/input_1
