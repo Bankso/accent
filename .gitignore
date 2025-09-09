@@ -20,3 +20,4 @@ target
 .cpcache/
 .lein*
 /input_1
+/mc2_input
