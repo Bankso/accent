@@ -1,0 +1,2160 @@
+<http://syn.org/mc2/biospecimen/Study_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Study Key";
+	<http://purl.org/dc/terms/description> "The unique Study_id foreign keys associated with the resource, found in the grant Study information. Used to group the resource with other components. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/biospecimen/Individual_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Key";
+	<http://purl.org/dc/terms/description> "Unique Individual_id foreign key(s) that link metadata entries as part of the same collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/biospecimen/Model_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Model Key";
+	<http://purl.org/dc/terms/description> "Unique Model_id foreign key(s) that link metadata entries as part of the same collection. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_id> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen_id";
+	<http://purl.org/dc/terms/description> "Unique ID associated with a biosample, used as a key for record linking and updates";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/isKey> true;
+	<http://syn.org/isCDE> 15100774 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Type_Category> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Type Category";
+	<http://purl.org/dc/terms/description> "The general category of this biospecimen.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/isCDE> 11253427 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Type";
+	<http://purl.org/dc/terms/description> "The type of biospecimen";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Species> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Species";
+	<http://purl.org/dc/terms/description> "The species from which the biospecimen originates";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/biospecimen> .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Sex> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Sex";
+	<http://purl.org/dc/terms/description> "Biological sex associated with the specimen donor";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 7572817 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Age_at_Collection> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Age at Collection";
+	<http://purl.org/dc/terms/description> "Age at the time the biospecimen was collected. Please provide the unit in field Biospecimen Age at Collection Unit.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "integer";
+	<http://syn.org/isCDE> 14473376 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Age_at_Collection_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Age at Collection Unit";
+	<http://purl.org/dc/terms/description> "Unit associated with age at the time the biospecimen was collected.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Disease_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Disease Type";
+	<http://purl.org/dc/terms/description> "The type of tumor associated with the specimen. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Tumor_Subtype> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Tumor Subtype";
+	<http://purl.org/dc/terms/description> "The subtype related to the scientific determination and investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms of tissue growth resulting from uncontrolled cell proliferation.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Tumor_Grade> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Tumor Grade";
+	<http://purl.org/dc/terms/description> "Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 11325685 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Composition> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Composition";
+	<http://purl.org/dc/terms/description> "The text term used to describe the type(s) of tissue contained in the biospecimen. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/isCDE> 12922545 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Tumor_Status> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Tumor Status";
+	<http://purl.org/dc/terms/description> "Normal or Tumor Sample Pathology Indicator";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/isCDE> 14688604 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Preservation_Method> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Preservation Method";
+	<http://purl.org/dc/terms/description> "Text term that represents the method used to preserve the sample.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 8028962 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Anatomic_Site> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Anatomic Site";
+	<http://purl.org/dc/terms/description> "Text term that represents the name of the primary disease site of the submitted tumor sample.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 14156279 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Site_of_Resection_or_Biopsy> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Site of Resection or Biopsy";
+	<http://purl.org/dc/terms/description> "The text term used to describe the anatomic site of the resection or biopsy of the patient's malignant disease.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 6 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Site_of_Origin> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Site of Origin";
+	<http://purl.org/dc/terms/description> "The text term used to describe the anatomic site of origin, of the patient's malignant disease.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 4 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Timepoint_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Timepoint Type";
+	<http://purl.org/dc/terms/description> "Label to identify an event associated with the collection of the biospecimen (e.g. Baseline, End of Treatment, Overall survival, Final). Use Biospecimen Timepoint Offset to indicate the number of post-event days that elapsed before the biospecimen was collected. NO PHI/PII INFORMATION IS ALLOWED.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Collection_Site> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Collection Site";
+	<http://purl.org/dc/terms/description> "The health care site at which the biospecimen sample was collected.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Therapeutic_Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Therapeutic Agent";
+	<http://purl.org/dc/terms/description> "Text identification of the individual agent(s) used as part of a treatment regimen.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 13579886 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Tumor_Morphology> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Tumor Morphology";
+	<http://purl.org/dc/terms/description> "Morphology code from the third edition of the International Classification of Diseases for Oncology, published in 2000, and used principally in tumor and cancer registries for coding the site (topography) and the histology (morphology) of neoplasms.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 3 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Fixative> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Fixative";
+	<http://purl.org/dc/terms/description> "The name of the compound that preserves tissues and cells in this sample for microscopic study.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/isCDE> 65078 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Embedding_Medium> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Embedding Medium";
+	<http://purl.org/dc/terms/description> "The name of the material that infiltrates and supports the specimen and preserves its shape and structure for sectioning and microscopy.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/isCDE> 8037927 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Acquisition_Method> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Acquisition Method";
+	<http://purl.org/dc/terms/description> "Records the method of acquisition or source for the specimen under consideration";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Description> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Description";
+	<http://purl.org/dc/terms/description> "A description of the biospecimen.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isCDE> 14688604 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Pathology> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Pathology";
+	<http://purl.org/dc/terms/description> "The pathology identifier associated with the biospecimen.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_BioSample_Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen BioSample Identifier";
+	<http://purl.org/dc/terms/description> "BioSample (SAMN) accession number corresponding to the source of this biospecimen.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/biospecimen/Parent_Biospecimen_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Parent Biospecimen Key";
+	<http://purl.org/dc/terms/description> "Biospecimen Key identifer of a biospecimen from which this sample was derived. Do not use this field to reference the source model or individual.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Stain> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Stain";
+	<http://purl.org/dc/terms/description> "Any of the various methods that use a dye, reagent, or other material for producing coloration in tissues or microorganisms for microscopic examination.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/isCDE> 8120269 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Timepoint_Offset> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Timepoint Offset";
+	<http://purl.org/dc/terms/description> "The number of days that elapsed before the biospecimen was collected, relative to the event described by Biospecimen Timepoint Type. Floating point values are allowed.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Last_Known_Disease_Status> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Last Known Disease Status";
+	<http://purl.org/dc/terms/description> "Text term that describes the last known status of an individual associated with this specimen.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Known_Metastasis_Sites> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Known Metastasis Sites";
+	<http://purl.org/dc/terms/description> "The text term(s) used to describe the anatomic site(s) of metastasis associated with the malignant disease of the individual or model.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Primary_Site> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Primary Site";
+	<http://purl.org/dc/terms/description> "Primary site in the body associated with the primary diagnosis.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Primary_Diagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Primary Diagnosis";
+	<http://purl.org/dc/terms/description> "Text term used to describe the histologic diagnosis relevant to the model system, as described by the World Health Organization's (WHO) International Classification of Diseases for Oncology (ICD-O).";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 14714127 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Treatment_Response> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Treatment Response";
+	<http://purl.org/dc/terms/description> "Text term that describes the treatment response of a model or patient from which this specimen was derived.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 13383448 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Incidence_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Incidence Type";
+	<http://purl.org/dc/terms/description> "Text term describing a change in disease status associated with the collection of this specimen.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 2002 .
+
+<http://syn.org/mc2/biospecimen/Biospecimen_Treatment_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Treatment Type";
+	<http://purl.org/dc/terms/description> "Text term that describes the kind of treatment administered.";
+	<http://syn.org/node> <http://syn.org/mc2/biospecimen>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 14737565 .
+
+<http://syn.org/mc2/datasetView/Dataset_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Name";
+	<http://purl.org/dc/terms/description> "Name of the dataset";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/datasetView> .
+
+<http://syn.org/mc2/datasetView/Dataset_Alias> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Alias";
+	<http://purl.org/dc/terms/description> "Alias of the dataset. Must be unique. Can be the GEO identifier such as GSE12345, or a DOI. No Greek Letters.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/datasetView> .
+
+<http://syn.org/mc2/datasetView/Dataset_Description> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Description";
+	<http://purl.org/dc/terms/description> "Description of the dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/datasetView/Dataset_Design> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Design";
+	<http://purl.org/dc/terms/description> "The overall design of the dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/datasetView/Dataset_Url> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Url";
+	<http://purl.org/dc/terms/description> "The url of where the dataset is stored.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/datasetView> .
+
+<http://syn.org/mc2/datasetView/Dataset_Doi> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Doi";
+	<http://purl.org/dc/terms/description> "The Digital Object Identifier (DOI) associated with the dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/datasetView> .
+
+<http://syn.org/mc2/datasetView/Dataset_Assay> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Assay";
+	<http://purl.org/dc/terms/description> "The assay the dataset is representative of. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/datasetView> .
+
+<http://syn.org/mc2/datasetView/Dataset_Species> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Species";
+	<http://purl.org/dc/terms/description> "The species the data was collected on. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/datasetView> .
+
+<http://syn.org/mc2/datasetView/Dataset_Tumor_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Tumor Type";
+	<http://purl.org/dc/terms/description> "The tumor type(s), if applicable, of the data collected on. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/datasetView/Dataset_Tissue> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Tissue";
+	<http://purl.org/dc/terms/description> "Tissue type(s) associated with the dataset. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/datasetView/Dataset_File_Formats> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset File Formats";
+	<http://purl.org/dc/terms/description> "A list of file formats associated with the dataset. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/datasetView/GrantView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "GrantView Key";
+	<http://purl.org/dc/terms/description> "Unique GrantView_id foreign key(s) that group the resource with other components, as part of the same grant-associated collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/datasetView/Study_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Study Key";
+	<http://purl.org/dc/terms/description> "The unique Study_id foreign keys associated with the resource, found in the grant Study information. Used to group the resource with other components. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/datasetView/PublicationView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "PublicationView Key";
+	<http://purl.org/dc/terms/description> "Unique PublicationView_id foreign key(s) that link metadata entries as part of the same collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/datasetView/Data_Use_Codes> <http://www.w3.org/2000/01/rdf-schema#label> "Data Use Codes";
+	<http://purl.org/dc/terms/description> "DUO code - A data item that is used to indicate consent permissions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be removed, stored or used.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/isCDE> 2001 .
+
+<http://syn.org/mc2/datasetView/DatasetView_id> <http://www.w3.org/2000/01/rdf-schema#label> "DatasetView_id";
+	<http://purl.org/dc/terms/description> "A unique primary key that enables record updates using schematic.";
+	<http://syn.org/node> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/datasetView>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/file/File_Description> <http://www.w3.org/2000/01/rdf-schema#label> "File Description";
+	<http://purl.org/dc/terms/description> "Description of the file.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isCDE> 11280338 .
+
+<http://syn.org/mc2/file/File_Design> <http://www.w3.org/2000/01/rdf-schema#label> "File Design";
+	<http://purl.org/dc/terms/description> "The overall design of the dataset or file.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/file/File_Url> <http://www.w3.org/2000/01/rdf-schema#label> "File Url";
+	<http://purl.org/dc/terms/description> "The url of where the file is stored.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file>;
+	<http://syn.org/isCDE> 11556141 .
+
+<http://syn.org/mc2/file/File_Assay> <http://www.w3.org/2000/01/rdf-schema#label> "File Assay";
+	<http://purl.org/dc/terms/description> "The assay(s) the file is representative of. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file> .
+
+<http://syn.org/mc2/file/File_Level> <http://www.w3.org/2000/01/rdf-schema#label> "File Level";
+	<http://purl.org/dc/terms/description> "The processing level the file can be mapped to.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file> .
+
+<http://syn.org/mc2/file/File_Species> <http://www.w3.org/2000/01/rdf-schema#label> "File Species";
+	<http://purl.org/dc/terms/description> "The species the data was collected on. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file> .
+
+<http://syn.org/mc2/file/File_Tumor_Type> <http://www.w3.org/2000/01/rdf-schema#label> "File Tumor Type";
+	<http://purl.org/dc/terms/description> "The tumor type(s), if applicable, of the data collected. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/file/File_Tissue> <http://www.w3.org/2000/01/rdf-schema#label> "File Tissue";
+	<http://purl.org/dc/terms/description> "Tissue type(s) associated with the file. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/file/Biospecimen_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Biospecimen Key";
+	<http://purl.org/dc/terms/description> "Unique Biospecimen_id foreign key(s) that link metadata entries as part of the same collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/file/Study_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Study Key";
+	<http://purl.org/dc/terms/description> "The unique Study_id foreign keys associated with the resource, found in the grant Study information. Used to group the resource with other components. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/file/DatasetView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "DatasetView Key";
+	<http://purl.org/dc/terms/description> "Unique DatasetView_id foreign key(s) that link metadata entries as part of the same collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/file/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/file/Data_Use_Codes> <http://www.w3.org/2000/01/rdf-schema#label> "Data Use Codes";
+	<http://purl.org/dc/terms/description> "DUO code - A data item that is used to indicate consent permissions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be removed, stored or used.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/isCDE> 2001 .
+
+<http://syn.org/mc2/file/FileView_id> <http://www.w3.org/2000/01/rdf-schema#label> "FileView_id";
+	<http://purl.org/dc/terms/description> "A unique primary key that enables record updates using schematic.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file>;
+	<http://syn.org/isKey> true;
+	<http://syn.org/isCDE> 14528010 .
+
+<http://syn.org/mc2/file/File_Longitudinal_Group> <http://www.w3.org/2000/01/rdf-schema#label> "File Longitudinal Group";
+	<http://purl.org/dc/terms/description> "A label that can be used to identify groups of files from the same longitudinal/time-resolved experiment";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/file/File_Longitudinal_Event_Type> <http://www.w3.org/2000/01/rdf-schema#label> "File Longitudinal Event Type";
+	<http://purl.org/dc/terms/description> "The type of event to which File Longitudinal Total Time Elapsed is related";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "enum" .
+
+<http://syn.org/mc2/file/File_Longitudinal_Sequence_Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "File Longitudinal Sequence Identifier";
+	<http://purl.org/dc/terms/description> "The order in which this file was collected with respect to the longitudinal experiment (e.g., 1, 2, etc.). Integer.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/file/File_Longitudinal_Time_Elapsed_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "File Longitudinal Time Elapsed Unit";
+	<http://purl.org/dc/terms/description> "The unit of time associated with Sequential and Total Time Elapsed attributes.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/file/File_Longitudinal_Sequential_Time_Elapsed> <http://www.w3.org/2000/01/rdf-schema#label> "File Longitudinal Sequential Time Elapsed";
+	<http://purl.org/dc/terms/description> "The time elapsed between collecting the current and previous files in this longitudinal group.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/file/File_Longitudinal_Total_Time_Elapsed> <http://www.w3.org/2000/01/rdf-schema#label> "File Longitudinal Total Time Elapsed";
+	<http://purl.org/dc/terms/description> "The total time elapsed between the first and current files contained this longitudinal group.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/file/File_Format> <http://www.w3.org/2000/01/rdf-schema#label> "File Format";
+	<http://purl.org/dc/terms/description> "The format of the file described by this entry.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file>;
+	<http://syn.org/isCDE> 11416926 .
+
+<http://syn.org/mc2/file/File_Alias> <http://www.w3.org/2000/01/rdf-schema#label> "File Alias";
+	<http://purl.org/dc/terms/description> "A string identifier associated with the file. Must be unique. Can be the repository accesssion number (e.g., Synapse ID, GEO identifier such as GSE12345). No Greek Letters or DOIs.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file> .
+
+<http://syn.org/mc2/file/File_Anatomic_Site> <http://www.w3.org/2000/01/rdf-schema#label> "File Anatomic Site";
+	<http://purl.org/dc/terms/description> "The anatomic site associated with the data contained in this file.";
+	<http://syn.org/node> <http://syn.org/mc2/file>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/file>;
+	<http://syn.org/isCDE> 14156279 .
+
+<http://syn.org/mc2/grant/Grant_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Name";
+	<http://purl.org/dc/terms/description> "Name of the grant";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Grant_Number> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Number";
+	<http://purl.org/dc/terms/description> "Number of the grant (i.e. CA------ format)";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Grant_Abstract> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Abstract";
+	<http://purl.org/dc/terms/description> "Abstract for the grant";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Grant_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Type";
+	<http://purl.org/dc/terms/description> "Type of grant";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Grant_Theme_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Theme Name";
+	<http://purl.org/dc/terms/description> "Theme(s) associated with the grant. 1...*";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Grant_Institution_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Institution Name";
+	<http://purl.org/dc/terms/description> "The full name of the institution(s) associated with the grant. (e.g. Harvard University). 1...*";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Grant_Institution_Alias> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Institution Alias";
+	<http://purl.org/dc/terms/description> "The alias of the institution(s) associated with the grant (e.g. UCSD). 1...*";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Grant_Investigator> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Investigator";
+	<http://purl.org/dc/terms/description> "Investigator(s) associated witht the grant. 1...*";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Grant_Consortium_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Consortium Name";
+	<http://purl.org/dc/terms/description> "Consortium(s) associated with the grant. 1...1";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/GrantView_id> <http://www.w3.org/2000/01/rdf-schema#label> "GrantView_id";
+	<http://purl.org/dc/terms/description> "A unique primary key that enables record updates using schematic.";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/grant/Grant_Synapse_Team> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Synapse Team";
+	<http://purl.org/dc/terms/description> "The Synapse team associated with the grant, created by the MC2 Center";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/grant/Grant_Synapse_Project> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Synapse Project";
+	<http://purl.org/dc/terms/description> "The Synapse project associated with the grant, created by the MC2 Center";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/grant/Grant_Start_Date> <http://www.w3.org/2000/01/rdf-schema#label> "Grant Start Date";
+	<http://purl.org/dc/terms/description> "The start date of the grant YYYY-MM-DD format";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/NIH_RePORTER_Link> <http://www.w3.org/2000/01/rdf-schema#label> "NIH RePORTER Link";
+	<http://purl.org/dc/terms/description> "Link to the search results for this grant number on the NIH Reporter website";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/grant/Duration_of_Funding> <http://www.w3.org/2000/01/rdf-schema#label> "Duration of Funding";
+	<http://purl.org/dc/terms/description> "Duration of the funding period, in years";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/grant/Embargo_End_Date> <http://www.w3.org/2000/01/rdf-schema#label> "Embargo End Date";
+	<http://purl.org/dc/terms/description> "Date at which an embargo on related resources had lifted";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/grant/Grant_End_Date> <http://www.w3.org/2000/01/rdf-schema#label> "Grant End Date";
+	<http://purl.org/dc/terms/description> "The end date of the grant YYYY-MM-DD format";
+	<http://syn.org/node> <http://syn.org/mc2/grant>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/grant> .
+
+<http://syn.org/mc2/imageChannel/Study_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Study Key";
+	<http://purl.org/dc/terms/description> "The unique Study_id foreign keys associated with the resource, found in the grant Study information. Used to group the resource with other components. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageChannel/ImagingChannel_id> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingChannel_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas.";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageChannel/Channel_Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Identifier";
+	<http://purl.org/dc/terms/description> "This must match the corresponding field in the OME-XML / TIFF header. (eg Channel:0:1)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageChannel> .
+
+<http://syn.org/mc2/imageChannel/Channel_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Name";
+	<http://purl.org/dc/terms/description> "This must match the corresponding field in the OME-XML / TIFF header. (eg Blue or CD45 or E-cadherin)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageChannel> .
+
+<http://syn.org/mc2/imageChannel/Channel_Passed_QC> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Passed QC";
+	<http://purl.org/dc/terms/description> "Identify stains that did not pass QC but are included in the dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Cycle_Number> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Cycle Number";
+	<http://purl.org/dc/terms/description> "The cycle # in which the co-listed reagent(s) was(were) used. Integer >= 1 (up to number of cycles)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Sub-cycle_Number> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Sub-cycle Number";
+	<http://purl.org/dc/terms/description> "Sub cycle number";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Antibody_Role> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Antibody Role";
+	<http://purl.org/dc/terms/description> "Is this antibody acting as a primary or secondary antibody?";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Target_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Target Name";
+	<http://purl.org/dc/terms/description> "Short descriptive name (abbreviation) for this target (antigen)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageChannel> .
+
+<http://syn.org/mc2/imageChannel/Channel_Antibody_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Antibody Name";
+	<http://purl.org/dc/terms/description> "Antibody Name (free text (eg Keratin, CD163, DNA))";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Resource_ID> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Resource ID";
+	<http://purl.org/dc/terms/description> "Research Resource Identifier (eg RRID: AB_394606)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Fluorophore> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Fluorophore";
+	<http://purl.org/dc/terms/description> "Fluorescent dye label (eg Alexa Fluor 488)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Antibody_Clone> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Antibody Clone";
+	<http://purl.org/dc/terms/description> "Clone";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Antibody_Lot> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Antibody Lot";
+	<http://purl.org/dc/terms/description> "Lot number from vendor";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Antibody_Vendor> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Antibody Vendor";
+	<http://purl.org/dc/terms/description> "Vendor";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Antibody_Catalog_Number> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Antibody Catalog Number";
+	<http://purl.org/dc/terms/description> "Catalog Number";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Excitation_Wavelength> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Excitation Wavelength";
+	<http://purl.org/dc/terms/description> "Center/peak of the excitation spectrum (nm)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageChannel/Channel_Emission_Wavelength> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Emission Wavelength";
+	<http://purl.org/dc/terms/description> "Center/peak of the emission spectrum (nm)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageChannel/Channel_Excitation_Bandwidth> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Excitation Bandwidth";
+	<http://purl.org/dc/terms/description> "Nominal width of excitation spectrum (nm)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageChannel/Channel_Emission_Bandwidth> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Emission Bandwidth";
+	<http://purl.org/dc/terms/description> "Nominal width of emission spectrum (nm)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageChannel/Channel_Metal_Symbol> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Metal Symbol";
+	<http://purl.org/dc/terms/description> "Element abbreviation. eg La or Nd";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageChannel/Channel_Metal_Isotope> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Metal Isotope";
+	<http://purl.org/dc/terms/description> "Element mass number";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageChannel/Channel_Oligo_Barcode_Upper_Strand> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Oligo Barcode Upper Strand";
+	<http://purl.org/dc/terms/description> "Oligo Barcode - Upper Strand";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Oligo_Barcode_Lower_Strand> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Oligo Barcode Lower Strand";
+	<http://purl.org/dc/terms/description> "Oligo Barcode - Lower Strand";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Probe_Dilution_Ratio> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Probe Dilution Ratio";
+	<http://purl.org/dc/terms/description> "Dilution (eg 1:1000)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageChannel/Channel_Probe_Concentration> <http://www.w3.org/2000/01/rdf-schema#label> "Channel Probe Concentration";
+	<http://purl.org/dc/terms/description> "Concentration (eg 10ug/mL)";
+	<http://syn.org/node> <http://syn.org/mc2/imageChannel>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel1/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/imageLevel1/ImagingChannel_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingChannel Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingChannel_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel1/ImagingLevel1_id> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel1_id";
+	<http://purl.org/dc/terms/description> "Unique row identifier, used as a primary key for record updates";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel1/Image_Assay_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Image Assay Type";
+	<http://purl.org/dc/terms/description> "Type of imaging assay";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/isCDE> 7789196 .
+
+<http://syn.org/mc2/imageLevel1/Image_Protocol_Link> <http://www.w3.org/2000/01/rdf-schema#label> "Image Protocol Link";
+	<http://purl.org/dc/terms/description> "Protocols.io ID or DOI link to a free/open protocol resource describing in detail the assay protocol (e.g. surface markers used in Smart-seq, dissociation duration,  lot/batch numbers for key reagents such as primers, sequencing reagent kits, etc.) or the protocol by which the sample was obtained or generated.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel1/Image_Platform_Model> <http://www.w3.org/2000/01/rdf-schema#label> "Image Platform Model";
+	<http://purl.org/dc/terms/description> "The specific model of the instrument used to carry out an imaging experiment.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageLevel1/Image_Platform_Manufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "Image Platform Manufacturer";
+	<http://purl.org/dc/terms/description> "Producer of the imaging equipment that was used to generate the digital image";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageLevel1/Image_Software> <http://www.w3.org/2000/01/rdf-schema#label> "Image Software";
+	<http://purl.org/dc/terms/description> "The name of the software package that was used to capture, generate, and process the image.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel1>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/imageLevel2/ImagingLevel1_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel1 Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingLevel1_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel2/ImagingChannel_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingChannel Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingChannel_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel2/Image_Assay_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Image Assay Type";
+	<http://purl.org/dc/terms/description> "Type of imaging assay";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/isCDE> 7789196 .
+
+<http://syn.org/mc2/imageLevel2/ImagingLevel2_id> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel2_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel2/Image_Protocol_Link> <http://www.w3.org/2000/01/rdf-schema#label> "Image Protocol Link";
+	<http://purl.org/dc/terms/description> "Protocols.io ID or DOI link to a free/open protocol resource describing in detail the assay protocol (e.g. surface markers used in Smart-seq, dissociation duration,  lot/batch numbers for key reagents such as primers, sequencing reagent kits, etc.) or the protocol by which the sample was obtained or generated.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Platform_Model> <http://www.w3.org/2000/01/rdf-schema#label> "Image Platform Model";
+	<http://purl.org/dc/terms/description> "The specific model of the instrument used to carry out an imaging experiment.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageLevel2/Image_Platform_Manufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "Image Platform Manufacturer";
+	<http://purl.org/dc/terms/description> "Producer of the imaging equipment that was used to generate the digital image";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageLevel2/Image_Software> <http://www.w3.org/2000/01/rdf-schema#label> "Image Software";
+	<http://purl.org/dc/terms/description> "The name of the software package that was used to capture, generate, and process the image.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Objective> <http://www.w3.org/2000/01/rdf-schema#label> "Image Objective";
+	<http://purl.org/dc/terms/description> "Objective lens identifier";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Nominal_Magnification> <http://www.w3.org/2000/01/rdf-schema#label> "Image Nominal Magnification";
+	<http://purl.org/dc/terms/description> "The magnification of the lens as specified by the manufacturer - i.e. 60 is a 60X lens. floating point value > 1(no units)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "number";
+	<http://syn.org/isCDE> 7788940 .
+
+<http://syn.org/mc2/imageLevel2/Image_Lense_Aperture> <http://www.w3.org/2000/01/rdf-schema#label> "Image Lense Aperture";
+	<http://purl.org/dc/terms/description> "The numerical aperture of the lens. Floating point value > 0.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel2/Image_Working_Distance> <http://www.w3.org/2000/01/rdf-schema#label> "Image Working Distance";
+	<http://purl.org/dc/terms/description> "The working distance of the lens, expressed as a floating point number. Floating point > 0.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel2/Image_Working_Distance_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Image Working Distance Unit";
+	<http://purl.org/dc/terms/description> "The units of the working distance. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Immersion_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Image Immersion Type";
+	<http://purl.org/dc/terms/description> "Immersion medium";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageLevel2/Image_Pyramidal> <http://www.w3.org/2000/01/rdf-schema#label> "Image Pyramidal";
+	<http://purl.org/dc/terms/description> "Does data file contain pyramid of images";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "boolean" .
+
+<http://syn.org/mc2/imageLevel2/Image_Z_stack> <http://www.w3.org/2000/01/rdf-schema#label> "Image Z stack";
+	<http://purl.org/dc/terms/description> "Does data file contain a Z-stack of images";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "boolean" .
+
+<http://syn.org/mc2/imageLevel2/Image_Timeseries> <http://www.w3.org/2000/01/rdf-schema#label> "Image Timeseries";
+	<http://purl.org/dc/terms/description> "Does data file contain a time-series of images";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "boolean" .
+
+<http://syn.org/mc2/imageLevel2/Image_FOV_Index> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Index";
+	<http://purl.org/dc/terms/description> "Index of FOV (as it pertains to its sequence order). Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel2/Image_FOV_Size_X> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Size X";
+	<http://purl.org/dc/terms/description> "Field of view X dimension. Floating point";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel2/Image_FOV_Size_X_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Size X Unit";
+	<http://purl.org/dc/terms/description> "Field of view X dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_FOV_Size_Y> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Size Y";
+	<http://purl.org/dc/terms/description> "Field  of view Y dimension. Floating point value";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel2/Image_FOV_Size_Y_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Size Y Unit";
+	<http://purl.org/dc/terms/description> "Field of view Y dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Frame_Averaging> <http://www.w3.org/2000/01/rdf-schema#label> "Image Frame Averaging";
+	<http://purl.org/dc/terms/description> "Number of frames averaged together (if no averaging, set to 1). Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel2/Image_Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Image Identifier";
+	<http://purl.org/dc/terms/description> "Unique internal image identifier. eg Image:0. (To be extracted from OME-XML)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Dimension_Order> <http://www.w3.org/2000/01/rdf-schema#label> "Image Dimension Order";
+	<http://purl.org/dc/terms/description> "The order in which the individual planes of data are interleaved.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Physical_Size_X> <http://www.w3.org/2000/01/rdf-schema#label> "Image Physical Size X";
+	<http://purl.org/dc/terms/description> "Physical size (X-dimension) of a pixel. Units are set by PhysicalSizeXUnit. Floating point value > 0.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel2/Image_Physical_Size_X_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Image Physical Size X Unit";
+	<http://purl.org/dc/terms/description> "The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Physical_Size_Y> <http://www.w3.org/2000/01/rdf-schema#label> "Image Physical Size Y";
+	<http://purl.org/dc/terms/description> "Physical size (Y-dimension) of a pixel. Units are set by PhysicalSizeYUnit. Floating point value > 0.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel2/Image_Physical_Size_Y_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Image Physical Size Y Unit";
+	<http://purl.org/dc/terms/description> "The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Physical_Size_Z> <http://www.w3.org/2000/01/rdf-schema#label> "Image Physical Size Z";
+	<http://purl.org/dc/terms/description> "Physical size (Z-dimension) of a pixel. Units are set by PhysicalSizeZUnit. Floating point value > 0.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel2/Image_Physical_Size_Z_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Image Physical Size Z Unit";
+	<http://purl.org/dc/terms/description> "The units of the physical size of a pixel. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel2/Image_Pixels_BigEndian> <http://www.w3.org/2000/01/rdf-schema#label> "Image Pixels BigEndian";
+	<http://purl.org/dc/terms/description> "Boolean (True/False)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "boolean" .
+
+<http://syn.org/mc2/imageLevel2/Image_Plane_Count> <http://www.w3.org/2000/01/rdf-schema#label> "Image Plane Count";
+	<http://purl.org/dc/terms/description> "Number of Z-planes (not to be confused with downsampled pyramid). Integer >=1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel2/Image_Channel_Size> <http://www.w3.org/2000/01/rdf-schema#label> "Image Channel Size";
+	<http://purl.org/dc/terms/description> "Number of channels. Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel2/Image_Number_of_Timepoints> <http://www.w3.org/2000/01/rdf-schema#label> "Image Number of Timepoints";
+	<http://purl.org/dc/terms/description> "Number of time points. Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel2/Image_X_Pixels> <http://www.w3.org/2000/01/rdf-schema#label> "Image X Pixels";
+	<http://purl.org/dc/terms/description> "Size of image: X dimension (in pixels). Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel2/Image_Y_Pixels> <http://www.w3.org/2000/01/rdf-schema#label> "Image Y Pixels";
+	<http://purl.org/dc/terms/description> "Size of image: Y dimension (in pixels). Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel2/Image_Z_Pixels> <http://www.w3.org/2000/01/rdf-schema#label> "Image Z Pixels";
+	<http://purl.org/dc/terms/description> "Size of image: Z dimension (in pixels). Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel2/Image_Pixel_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Image Pixel Type";
+	<http://purl.org/dc/terms/description> "Data type for each pixel value. E.g. uint16";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel2>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel3Image/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/imageLevel3Image/ImagingChannel_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingChannel Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingChannel_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel3Image/ImagingLevel2_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel2 Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingLevel2_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Assay_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Image Assay Type";
+	<http://purl.org/dc/terms/description> "Type of imaging assay";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/isCDE> 7789196 .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Protocol_Link> <http://www.w3.org/2000/01/rdf-schema#label> "Image Protocol Link";
+	<http://purl.org/dc/terms/description> "Protocols.io ID or DOI link to a free/open protocol resource describing in detail the assay protocol (e.g. surface markers used in Smart-seq, dissociation duration,  lot/batch numbers for key reagents such as primers, sequencing reagent kits, etc.) or the protocol by which the sample was obtained or generated.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Platform_Model> <http://www.w3.org/2000/01/rdf-schema#label> "Image Platform Model";
+	<http://purl.org/dc/terms/description> "The specific model of the instrument used to carry out an imaging experiment.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Platform_Manufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "Image Platform Manufacturer";
+	<http://purl.org/dc/terms/description> "Producer of the imaging equipment that was used to generate the digital image";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Software> <http://www.w3.org/2000/01/rdf-schema#label> "Image Software";
+	<http://purl.org/dc/terms/description> "The name of the software package that was used to capture, generate, and process the image.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Objective> <http://www.w3.org/2000/01/rdf-schema#label> "Image Objective";
+	<http://purl.org/dc/terms/description> "Objective lens identifier";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Nominal_Magnification> <http://www.w3.org/2000/01/rdf-schema#label> "Image Nominal Magnification";
+	<http://purl.org/dc/terms/description> "The magnification of the lens as specified by the manufacturer - i.e. 60 is a 60X lens. floating point value > 1(no units)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "number";
+	<http://syn.org/isCDE> 7788940 .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Lense_Aperture> <http://www.w3.org/2000/01/rdf-schema#label> "Image Lense Aperture";
+	<http://purl.org/dc/terms/description> "The numerical aperture of the lens. Floating point value > 0.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Working_Distance> <http://www.w3.org/2000/01/rdf-schema#label> "Image Working Distance";
+	<http://purl.org/dc/terms/description> "The working distance of the lens, expressed as a floating point number. Floating point > 0.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Immersion_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Image Immersion Type";
+	<http://purl.org/dc/terms/description> "Immersion medium";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Pyramidal> <http://www.w3.org/2000/01/rdf-schema#label> "Image Pyramidal";
+	<http://purl.org/dc/terms/description> "Does data file contain pyramid of images";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "boolean" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Z_stack> <http://www.w3.org/2000/01/rdf-schema#label> "Image Z stack";
+	<http://purl.org/dc/terms/description> "Does data file contain a Z-stack of images";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "boolean" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Timeseries> <http://www.w3.org/2000/01/rdf-schema#label> "Image Timeseries";
+	<http://purl.org/dc/terms/description> "Does data file contain a time-series of images";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "boolean" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_FOV_Index> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Index";
+	<http://purl.org/dc/terms/description> "Index of FOV (as it pertains to its sequence order). Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_FOV_Size_X> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Size X";
+	<http://purl.org/dc/terms/description> "Field of view X dimension. Floating point";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_FOV_Size_Y> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Size Y";
+	<http://purl.org/dc/terms/description> "Field  of view Y dimension. Floating point value";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_FOV_Size_Y_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Image FOV Size Y Unit";
+	<http://purl.org/dc/terms/description> "Field of view Y dimension units. See OME enumeration of allowed values for the UnitsLength attribute -- default: microns (um)";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel3Image/Image_Frame_Averaging> <http://www.w3.org/2000/01/rdf-schema#label> "Image Frame Averaging";
+	<http://purl.org/dc/terms/description> "Number of frames averaged together (if no averaging, set to 1). Integer >= 1";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel3Image/ImagingLevel3Image_id> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel3Image_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel3Image>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel3Segments/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/imageLevel3Segments/ImagingLevel2_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel2 Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingLevel2_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel3Segments/ImagingLevel3Image_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel3Image Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingLevel3Image_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel3Segments/Software_and_Version> <http://www.w3.org/2000/01/rdf-schema#label> "Software and Version";
+	<http://purl.org/dc/terms/description> "Name of software used to generate the information contained in the file. String";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel3Segments/ImagingLevel3Segments_id> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel3Segments_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel3Segments/Image_Segmentation_Data_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Image Segmentation Data Type";
+	<http://purl.org/dc/terms/description> "Specifies how the segmentation is stored";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel3Segments> .
+
+<http://syn.org/mc2/imageLevel3Segments/Image_Parameter_file> <http://www.w3.org/2000/01/rdf-schema#label> "Image Parameter file";
+	<http://purl.org/dc/terms/description> "Path in Synapse to a text file listing algorithm version numbers and relevant parameters needed to reproduce the analysis";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel3Segments/Image_Object_Class> <http://www.w3.org/2000/01/rdf-schema#label> "Image Object Class";
+	<http://purl.org/dc/terms/description> "Defines the structure that the mask delineates";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel3Segments/Image_Number_of_Objects> <http://www.w3.org/2000/01/rdf-schema#label> "Image Number of Objects";
+	<http://purl.org/dc/terms/description> "The number of objects (eg cells) described";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel3Segments/Image_Object_Class_Description> <http://www.w3.org/2000/01/rdf-schema#label> "Image Object Class Description";
+	<http://purl.org/dc/terms/description> "If Imaging Object Class is Other, please use this field to provide a text description of the imaging object class associated with the segmentation data";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel3Segments>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel4/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/imageLevel4/ImagingLevel2_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel2 Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingLevel2_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel4/ImagingLevel3Image_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel3Image Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingLevel3Image_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel4/ImagingLevel3Segments_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel3Segments Key";
+	<http://purl.org/dc/terms/description> "Unique ImagingLevel3Segments_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel4/Image_Parameter_file> <http://www.w3.org/2000/01/rdf-schema#label> "Image Parameter file";
+	<http://purl.org/dc/terms/description> "Path in Synapse to a text file listing algorithm version numbers and relevant parameters needed to reproduce the analysis";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel4/Image_Software> <http://www.w3.org/2000/01/rdf-schema#label> "Image Software";
+	<http://purl.org/dc/terms/description> "The name of the software package that was used to capture, generate, and process the image.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/imageLevel4/Image_Number_of_Objects> <http://www.w3.org/2000/01/rdf-schema#label> "Image Number of Objects";
+	<http://purl.org/dc/terms/description> "The number of objects (eg cells) described";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/imageLevel4/Image_Object_Class> <http://www.w3.org/2000/01/rdf-schema#label> "Image Object Class";
+	<http://purl.org/dc/terms/description> "Defines the structure that the mask delineates";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "enum" .
+
+<http://syn.org/mc2/imageLevel4/ImagingLevel4_id> <http://www.w3.org/2000/01/rdf-schema#label> "ImagingLevel4_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas.";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/imageLevel4/Image_Number_of_Features> <http://www.w3.org/2000/01/rdf-schema#label> "Image Number of Features";
+	<http://purl.org/dc/terms/description> "The number of features (eg channels) described";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "integer";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel4> .
+
+<http://syn.org/mc2/imageLevel4/Image_Summary_Statistic> <http://www.w3.org/2000/01/rdf-schema#label> "Image Summary Statistic";
+	<http://purl.org/dc/terms/description> "Function used to summarize object/feature intensity";
+	<http://syn.org/node> <http://syn.org/mc2/imageLevel4>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/imageLevel4> .
+
+<http://syn.org/mc2/individual/Study_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Study Key";
+	<http://purl.org/dc/terms/description> "The unique Study_id foreign keys associated with the resource, found in the grant Study information. Used to group the resource with other components. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/individual/Individual_id> <http://www.w3.org/2000/01/rdf-schema#label> "Individual_id";
+	<http://purl.org/dc/terms/description> "A unique primary key that enables record updates using schematic.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/individual>;
+	<http://syn.org/isKey> true;
+	<http://syn.org/isCDE> 12220014 .
+
+<http://syn.org/mc2/individual/Individual_Known_Metastasis_Sites> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Known Metastasis Sites";
+	<http://purl.org/dc/terms/description> "The text term(s) used to describe the anatomic site(s) of metastasis associated with the patient's malignant disease.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/individual/Individual_Last_Known_Disease_Status> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Last Known Disease Status";
+	<http://purl.org/dc/terms/description> "Text term that describes the last known status of an individual.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 2847330 .
+
+<http://syn.org/mc2/individual/Individual_Sex> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Sex";
+	<http://purl.org/dc/terms/description> "Biological sex associated with the specimen donor";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/individual>;
+	<http://syn.org/isCDE> 7572817 .
+
+<http://syn.org/mc2/individual/Individual_Disease_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Disease Type";
+	<http://purl.org/dc/terms/description> "The type of tumor associated with the specimen. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/isCDE> 13471160 .
+
+<http://syn.org/mc2/individual/Individual_Primary_Diagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Primary Diagnosis";
+	<http://purl.org/dc/terms/description> "Text term used to describe the patient's histologic diagnosis, as described by the World Health Organization's (WHO) International Classification of Diseases for Oncology (ICD-O).";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/individual>;
+	<http://syn.org/isCDE> 14714127 .
+
+<http://syn.org/mc2/individual/Individual_Primary_Site> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Primary Site";
+	<http://purl.org/dc/terms/description> "Primary site in the body associated with the primary diagnosis.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 14883047 .
+
+<http://syn.org/mc2/individual/Individual_Tumor_Subtype> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Tumor Subtype";
+	<http://purl.org/dc/terms/description> "The subtype related to the scientific determination and investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms of tissue growth resulting from uncontrolled cell proliferation.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/individual/Individual_Tumor_Grade> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Tumor Grade";
+	<http://purl.org/dc/terms/description> "Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 11325685 .
+
+<http://syn.org/mc2/individual/Individual_Site_of_Origin> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Site of Origin";
+	<http://purl.org/dc/terms/description> "The text term used to describe the anatomic site of origin, of the patient's malignant disease.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/individual/Individual_Age_at_Diagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Age at Diagnosis";
+	<http://purl.org/dc/terms/description> "Age at the time the individual was diagnosed, expressed in years.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "integer";
+	<http://syn.org/isCDE> 15019300 .
+
+<http://syn.org/mc2/individual/Individual_Gender> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Gender";
+	<http://purl.org/dc/terms/description> "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/individual/Individual_dbGaP_Subject_Id> <http://www.w3.org/2000/01/rdf-schema#label> "Individual dbGaP Subject Id";
+	<http://purl.org/dc/terms/description> "The identifer assigned to the participant by dbGap";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/individual/Individual_Days_to_Last_Followup> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Days to Last Followup";
+	<http://purl.org/dc/terms/description> "Number of days between the dates used for index and last follow-up";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/individual/Individual_Primary_Tumor_Stage> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Primary Tumor Stage";
+	<http://purl.org/dc/terms/description> "Extent of the primary cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 3440328 .
+
+<http://syn.org/mc2/individual/Individual_Tumor_Lymph_Node_Stage> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Tumor Lymph Node Stage";
+	<http://purl.org/dc/terms/description> "Extent of the regional lymph node involvement for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 3440330 .
+
+<http://syn.org/mc2/individual/Individual_Days_To_Recurrence> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Days To Recurrence";
+	<http://purl.org/dc/terms/description> "Number of days between the date used for index and the date the patient's disease recurred";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/individual/Individual_Days_to_Last_Known_Disease_Status> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Days to Last Known Disease Status";
+	<http://purl.org/dc/terms/description> "Time interval from the date of last follow up to the date of initial pathologic diagnosis, represented as a calculated number of days.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/individual/Individual_Treatment_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Treatment Type";
+	<http://purl.org/dc/terms/description> "Text term that describes the kind of treatment administered.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 14737565 .
+
+<http://syn.org/mc2/individual/Individual_Days_to_Treatment> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Days to Treatment";
+	<http://purl.org/dc/terms/description> "Number of days between the date used for index and the date the treatment started.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/individual/Individual_Therapeutic_Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Therapeutic Agent";
+	<http://purl.org/dc/terms/description> "Text identification of the individual agent(s) used as part of a treatment regimen.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/isCDE> 13579886 .
+
+<http://syn.org/mc2/individual/Individual_Metastasis_Stage> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Metastasis Stage";
+	<http://purl.org/dc/terms/description> "Extent of the distant metastasis for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 3440331 .
+
+<http://syn.org/mc2/individual/Individual_Recurrence_Status> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Recurrence Status";
+	<http://purl.org/dc/terms/description> "Yes/No/Unknown indicator to identify whether a patient has had a new tumor event after initial treatment.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 13529783 .
+
+<http://syn.org/mc2/individual/Individual_Treatment_Response> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Treatment Response";
+	<http://purl.org/dc/terms/description> "Text term that describes the patient's final outcome after the treatment was administered.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 13383448 .
+
+<http://syn.org/mc2/individual/Individual_Vital_Status> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Vital Status";
+	<http://purl.org/dc/terms/description> "Text term that describes the patient's current vital status.";
+	<http://syn.org/node> <http://syn.org/mc2/individual>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/institution/Institution_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Institution Name";
+	<http://purl.org/dc/terms/description> "Machine readable name of the institution. (e.g. ArizonaStatUniversity, BostonUniversity, etc.)";
+	<http://syn.org/node> <http://syn.org/mc2/institution>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/institution> .
+
+<http://syn.org/mc2/institution/Institution_Full_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Institution Full Name";
+	<http://purl.org/dc/terms/description> "Human readable, full name of the institution. (e.g. Arizona State University, Boston University, etc.)";
+	<http://syn.org/node> <http://syn.org/mc2/institution>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/institution> .
+
+<http://syn.org/mc2/institution/Institution_Alias> <http://www.w3.org/2000/01/rdf-schema#label> "Institution Alias";
+	<http://purl.org/dc/terms/description> "Alias of the institution (e.g. ASU, BU, etc.)";
+	<http://syn.org/node> <http://syn.org/mc2/institution>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/institution> .
+
+<http://syn.org/mc2/institution/Institution_Location_State> <http://www.w3.org/2000/01/rdf-schema#label> "Institution Location State";
+	<http://purl.org/dc/terms/description> "The US state the institution is located in. Use Not Applicable, if not applicable.";
+	<http://syn.org/node> <http://syn.org/mc2/institution>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/institution> .
+
+<http://syn.org/mc2/institution/Institution_Location_City> <http://www.w3.org/2000/01/rdf-schema#label> "Institution Location City";
+	<http://purl.org/dc/terms/description> "The City the institution is located in.";
+	<http://syn.org/node> <http://syn.org/mc2/institution>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/institution> .
+
+<http://syn.org/mc2/institution/Rorid> <http://www.w3.org/2000/01/rdf-schema#label> "Rorid";
+	<http://purl.org/dc/terms/description> "Unique identifier (ROR ID) of an the institution";
+	<http://syn.org/node> <http://syn.org/mc2/institution>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/institution>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/model/Study_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Study Key";
+	<http://purl.org/dc/terms/description> "The unique Study_id foreign keys associated with the resource, found in the grant Study information. Used to group the resource with other components. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/model/Individual_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Individual Key";
+	<http://purl.org/dc/terms/description> "Unique Individual_id foreign key(s) that link metadata entries as part of the same collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/model/Model_id> <http://www.w3.org/2000/01/rdf-schema#label> "Model_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/model>;
+	<http://syn.org/isKey> true;
+	<http://syn.org/isCDE> 12220014 .
+
+<http://syn.org/mc2/model/Model_Age> <http://www.w3.org/2000/01/rdf-schema#label> "Model Age";
+	<http://purl.org/dc/terms/description> "The age of the model when used for an experiment (mice, zebrafish, etc.) or model source (cell lines, organoids, etc.)";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/model/Model_Age_Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Model Age Unit";
+	<http://purl.org/dc/terms/description> "The unit corresponding to the age provided for this model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/model/Model_Sex> <http://www.w3.org/2000/01/rdf-schema#label> "Model Sex";
+	<http://purl.org/dc/terms/description> "The biological sex of the model or model source.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/model>;
+	<http://syn.org/isCDE> 7572817 .
+
+<http://syn.org/mc2/model/Model_Disease_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Model Disease Type";
+	<http://purl.org/dc/terms/description> "The tumor type associated with the model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/model/Model_Tumor_Subtype> <http://www.w3.org/2000/01/rdf-schema#label> "Model Tumor Subtype";
+	<http://purl.org/dc/terms/description> "The molecular subtype of the tumor associated with the model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/model/Model_Species> <http://www.w3.org/2000/01/rdf-schema#label> "Model Species";
+	<http://purl.org/dc/terms/description> "The species of origin corresponding to the model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/model> .
+
+<http://syn.org/mc2/model/Model_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Model Type";
+	<http://purl.org/dc/terms/description> "The general label used to identify the model type.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/model> .
+
+<http://syn.org/mc2/model/Model_Method> <http://www.w3.org/2000/01/rdf-schema#label> "Model Method";
+	<http://purl.org/dc/terms/description> "The term that describes the general method used to create the model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/model/Model_Source> <http://www.w3.org/2000/01/rdf-schema#label> "Model Source";
+	<http://purl.org/dc/terms/description> "The reference organism from which the model was derived, if applicable. This could be a specific Biospecimen Key, Model Key, mouse type, cell line, or other reference. Provide RRID if available, to link to existing cell line information. Do not use this field to designate an Individual as the source of the model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/model/Model_Acquisition_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Model Acquisition Type";
+	<http://purl.org/dc/terms/description> "The method by which the model was obtained. If applicable, please provide a link to the supplier of the model source.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/model/Model_Graft_Source> <http://www.w3.org/2000/01/rdf-schema#label> "Model Graft Source";
+	<http://purl.org/dc/terms/description> "If the model is an allograft or xenograft, as indicated by Model Type, please provide a unique identifier associated with the source of the graft material (e.g., RRID, Individual Key, Model Key, Biospecimen Key)";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/model/Model_Genotype> <http://www.w3.org/2000/01/rdf-schema#label> "Model Genotype";
+	<http://purl.org/dc/terms/description> "The relevant genotype information associated with the model, including markers, background, etc.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/model/Model_Treatment_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Model Treatment Type";
+	<http://purl.org/dc/terms/description> "Text term that describes the kind of treatment applied to the model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 14737565 .
+
+<http://syn.org/mc2/model/Model_Therapeutic_Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Model Therapeutic Agent";
+	<http://purl.org/dc/terms/description> "Text identification of the individual agent(s) used as part of an experimental protocol performed using the model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/isCDE> 13579886 .
+
+<http://syn.org/mc2/model/Model_Primary_Diagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "Model Primary Diagnosis";
+	<http://purl.org/dc/terms/description> "Text term used to describe the histologic diagnosis relevant to the model system, as described by the World Health Organization's (WHO) International Classification of Diseases for Oncology (ICD-O).";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/model>;
+	<http://syn.org/isCDE> 14714127 .
+
+<http://syn.org/mc2/model/Model_Site_of_Origin> <http://www.w3.org/2000/01/rdf-schema#label> "Model Site of Origin";
+	<http://purl.org/dc/terms/description> "The text term used to describe the anatomic site of origin associated with the malignant disease model.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/model> .
+
+<http://syn.org/mc2/model/Model_Primary_Site> <http://www.w3.org/2000/01/rdf-schema#label> "Model Primary Site";
+	<http://purl.org/dc/terms/description> "Primary site in the body associated with the primary diagnosis.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/model/Model_Days_to_Treatment> <http://www.w3.org/2000/01/rdf-schema#label> "Model Days to Treatment";
+	<http://purl.org/dc/terms/description> "Number of days between the date used for index and the date the treatment started.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/model/Model_Treatment_Response> <http://www.w3.org/2000/01/rdf-schema#label> "Model Treatment Response";
+	<http://purl.org/dc/terms/description> "Text term that describes the model's response after the treatment was administered.";
+	<http://syn.org/node> <http://syn.org/mc2/model>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 13383448 .
+
+<http://syn.org/mc2/publication/Publication_Doi> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Doi";
+	<http://purl.org/dc/terms/description> "The digital object identifier associated with the publication in the form of https://www.doi.org/{doi} to comply with CrossRef DOI display guidelines.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/publication/Publication_Journal> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Journal";
+	<http://purl.org/dc/terms/description> "The name of the periodical publication in which the publication was published.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Pubmed_Id> <http://www.w3.org/2000/01/rdf-schema#label> "Pubmed Id";
+	<http://purl.org/dc/terms/description> "The PubMed identifier associated with the publication.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication>;
+	<http://syn.org/isCDE> 3443453 .
+
+<http://syn.org/mc2/publication/Pubmed_Url> <http://www.w3.org/2000/01/rdf-schema#label> "Pubmed Url";
+	<http://purl.org/dc/terms/description> "Pubmed URL for the publication";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Publication_Title> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Title";
+	<http://purl.org/dc/terms/description> "Title of the publication";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Publication_Year> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Year";
+	<http://purl.org/dc/terms/description> "Year of the publication";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "integer";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Publication_Keywords> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Keywords";
+	<http://purl.org/dc/terms/description> "Keywords associated with the publication. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "array[string]" .
+
+<http://syn.org/mc2/publication/Publication_Authors> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Authors";
+	<http://purl.org/dc/terms/description> "Authors of the publication. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Publication_Abstract> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Abstract";
+	<http://purl.org/dc/terms/description> "The abstract of the publication.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Publication_Assay> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Assay";
+	<http://purl.org/dc/terms/description> "Assay(s) associated with the publication. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Publication_Tumor_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Tumor Type";
+	<http://purl.org/dc/terms/description> "Tumor type(s) associated with the publication. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Publication_Tissue> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Tissue";
+	<http://purl.org/dc/terms/description> "Tissue type(s) associated with the publication. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Publication_Accessibility> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Accessibility";
+	<http://purl.org/dc/terms/description> "Whether there are non-monetary restrictions on accessing an the publication.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication> .
+
+<http://syn.org/mc2/publication/Study_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Study Key";
+	<http://purl.org/dc/terms/description> "The unique Study_id foreign keys associated with the resource, found in the grant Study information. Used to group the resource with other components. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/publication/GrantView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "GrantView Key";
+	<http://purl.org/dc/terms/description> "Unique GrantView_id foreign key(s) that group the resource with other components, as part of the same grant-associated collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/publication/Publication_Dataset_Alias> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Dataset Alias";
+	<http://purl.org/dc/terms/description> "A list of the dataset aliases (An alias of the dataset must be unique. Can be the GEO identifier such as GSE12345, or a DOI. No Greek Letters) associated with the publication. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/publication/PublicationView_id> <http://www.w3.org/2000/01/rdf-schema#label> "PublicationView_id";
+	<http://purl.org/dc/terms/description> "A unique primary key that enables record updates using schematic.";
+	<http://syn.org/node> <http://syn.org/mc2/publication>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/publication>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/seqLevel1/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/seqLevel1/SequencingLevel1_id> <http://www.w3.org/2000/01/rdf-schema#label> "SequencingLevel1_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/seqLevel1/NGS_Sequencing_Coverage> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Sequencing Coverage";
+	<http://purl.org/dc/terms/description> "Depth of coverage on assembly used. Found by (Unique Aligned Basecalls)/(Reference Length)";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "number";
+	<http://syn.org/isCDE> 11556322 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Read_Length> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Read Length";
+	<http://purl.org/dc/terms/description> "The average length of the sequencing reads. Can be integer, null";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "number";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/isCDE> 12426615 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Selection_Method> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Selection Method";
+	<http://purl.org/dc/terms/description> "How nucleic acid molecules are isolated.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 6347743 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Strategy> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Strategy";
+	<http://purl.org/dc/terms/description> "The assay associated with the nucleic acid library (e.g., RNA-Seq, ChIP-Seq)";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/isCDE> 6273393 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Source_Material> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Source Material";
+	<http://purl.org/dc/terms/description> "The type of source material being sequenced.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/isCDE> 15235975 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Layout> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Layout";
+	<http://purl.org/dc/terms/description> "Text description of the library layout, one of Paired-end or Single.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/isCDE> 11527735 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Preparation_Kit_Name> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Preparation Kit Name";
+	<http://purl.org/dc/terms/description> "Name of Library Preparation Kit. String";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Preparation_Kit_Vendor> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Preparation Kit Vendor";
+	<http://purl.org/dc/terms/description> "Vendor of Library Preparation Kit. String";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Preparation_Kit_Version> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Preparation Kit Version";
+	<http://purl.org/dc/terms/description> "Version of Library Preparation Kit. String";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/seqLevel1/NGS_Sequencing_Platform> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Sequencing Platform";
+	<http://purl.org/dc/terms/description> "A platform is an object aggregate that is the set of instruments and software needed to perform a process [OBI_0000050]. Specific model of the sequencing instrument.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/isCDE> 6352164 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Sequencing_Design_Description> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Sequencing Design Description";
+	<http://purl.org/dc/terms/description> "Free-form description of the methods used to create the sequencing library; a brief materials and methods section.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/isCDE> 11529028 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Read_Indicator> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Read Indicator";
+	<http://purl.org/dc/terms/description> "Indicate if this is Read 1 (R1), Read 2 (R2), Index Reads (I1), or Other";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1> .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Preparation_Days_from_Index> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Preparation Days from Index";
+	<http://purl.org/dc/terms/description> "Number of days between sample for assay was received in lab and the libraries were prepared for sequencing [number]. If not applicable please enter 'Not Applicable'";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/seqLevel1/NGS_Sequencing_Library_Construction_Days_from_Index> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Sequencing Library Construction Days from Index";
+	<http://purl.org/dc/terms/description> "Number of days between sample for assay was received in lab and day of sequencing library construction [number]. If not applicable please enter 'Not Applicable'";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "integer";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel1> .
+
+<http://syn.org/mc2/seqLevel1/NGS_Unique_Bases> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Unique Bases";
+	<http://purl.org/dc/terms/description> "Count of unique basecalls present in the data.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/seqLevel1/NGS_Raw_Reads> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Raw Reads";
+	<http://purl.org/dc/terms/description> "Reads not yet analyzed in any way to be used for data analysis. The number of reads that pass filter from the flow cell represented in the FASTQ file.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "integer";
+	<http://syn.org/isCDE> 11529035 .
+
+<http://syn.org/mc2/seqLevel1/NGS_Library_Source_Molecule> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Source Molecule";
+	<http://purl.org/dc/terms/description> "The source of nucleic acids represented in the sequencing library.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel1>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 15235981 .
+
+<http://syn.org/mc2/seqLevel2/SequencingLevel1_Key> <http://www.w3.org/2000/01/rdf-schema#label> "SequencingLevel1 Key";
+	<http://purl.org/dc/terms/description> "Unique SequencingLevel1_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/seqLevel2/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Library_Strategy> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Strategy";
+	<http://purl.org/dc/terms/description> "The assay associated with the nucleic acid library (e.g., RNA-Seq, ChIP-Seq)";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isCDE> 6273393 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Library_Source_Material> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Source Material";
+	<http://purl.org/dc/terms/description> "The type of source material being sequenced.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isCDE> 15235975 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Library_Source_Molecule> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Source Molecule";
+	<http://purl.org/dc/terms/description> "The source of nucleic acids represented in the sequencing library.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 15235981 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Library_Selection_Method> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Selection Method";
+	<http://purl.org/dc/terms/description> "How nucleic acid molecules are isolated.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 6347743 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Library_Layout> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Library Layout";
+	<http://purl.org/dc/terms/description> "Text description of the library layout, one of Paired-end or Single.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isCDE> 11527735 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Sequencing_Platform> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Sequencing Platform";
+	<http://purl.org/dc/terms/description> "A platform is an object aggregate that is the set of instruments and software needed to perform a process [OBI_0000050]. Specific model of the sequencing instrument.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isCDE> 6347771 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Sequencing_Design_Description> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Sequencing Design Description";
+	<http://purl.org/dc/terms/description> "Free-form description of the methods used to create the sequencing library; a brief 'materials and methods' section.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isCDE> 11529028 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Raw_Reads> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Raw Reads";
+	<http://purl.org/dc/terms/description> "Reads not yet analyzed in any way to be used for data analysis. The number of reads that pass filter from the flow cell represented in the FASTQ file.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number";
+	<http://syn.org/isCDE> 11529035 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Unique_Bases> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Unique Bases";
+	<http://purl.org/dc/terms/description> "Count of unique basecalls present in the data.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/seqLevel2/NGS_Read_Length> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Read Length";
+	<http://purl.org/dc/terms/description> "The average length of the sequencing reads. Can be integer, null";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isCDE> 12426615 .
+
+<http://syn.org/mc2/seqLevel2/NGS_Sequencing_Coverage> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Sequencing Coverage";
+	<http://purl.org/dc/terms/description> "Depth of coverage on assembly used. Found by (Unique Aligned Basecalls)/(Reference Length)";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number";
+	<http://syn.org/isCDE> 11556322 .
+
+<http://syn.org/mc2/seqLevel2/Genomic_Reference> <http://www.w3.org/2000/01/rdf-schema#label> "Genomic Reference";
+	<http://purl.org/dc/terms/description> "Exact version of the human genome reference used in the alignment of reads (e.g. GCF_000001405.39)";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isCDE> 11529031 .
+
+<http://syn.org/mc2/seqLevel2/Software_and_Version> <http://www.w3.org/2000/01/rdf-schema#label> "Software and Version";
+	<http://purl.org/dc/terms/description> "Name of software used to generate the information contained in the file. String";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isCDE> 11529072 .
+
+<http://syn.org/mc2/seqLevel2/SequencingLevel2_id> <http://www.w3.org/2000/01/rdf-schema#label> "SequencingLevel2_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/seqLevel2/NGS_Stitched_Reads> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Stitched Reads";
+	<http://purl.org/dc/terms/description> "Represents consensus from the overlapping sequence of read 1 and 2. This is a % of the aligned reads that were overlapped and consensus confirmed, usually upward of 80% but less in terms of number of reads than aligned reads";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/seqLevel2/NGS_Aligned_Reads> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Aligned Reads";
+	<http://purl.org/dc/terms/description> "Is a sequence that has been aligned to a gene/probe. Typically these reads can number from the hundreds of thousands to tens of millions. In GeoMx alignment is via mapping the RTS ID to a white list of sequences that represent targets.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/seqLevel2/NGS_Deduplicated_Reads> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Deduplicated Reads";
+	<http://purl.org/dc/terms/description> "Is the replacement of blocks of duplicate data with a Virtual Index Pointer linking the new sub-block to the existing block of data in a duplicate repository. This is used to reduce the amount of space need to store the data.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/seqLevel2/NGS_Trimmed_Reads> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Trimmed Reads";
+	<http://purl.org/dc/terms/description> "Number of the reads remaining after trimming has been applied.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/seqLevel2/NGS_MapQ30> <http://www.w3.org/2000/01/rdf-schema#label> "NGS MapQ30";
+	<http://purl.org/dc/terms/description> "Number of reads with Quality >= 30.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel2>;
+	<http://syn.org/type> "number" .
+
+<http://syn.org/mc2/seqLevel3/SequencingLevel2_Key> <http://www.w3.org/2000/01/rdf-schema#label> "SequencingLevel2 Key";
+	<http://purl.org/dc/terms/description> "Unique SequencingLevel2_id foreign key(s) that link metadata entries as part of the same Dataset. Please provide multiple values as a comma-separate list.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/seqLevel3/Filename> <http://www.w3.org/2000/01/rdf-schema#label> "Filename";
+	<http://purl.org/dc/terms/description> "The path of a file in Synapse, relative to the project. The file associated with the path will be annotated with attributes contained in this sheet.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/isCDE> 11284037 .
+
+<http://syn.org/mc2/seqLevel3/Software_and_Version> <http://www.w3.org/2000/01/rdf-schema#label> "Software and Version";
+	<http://purl.org/dc/terms/description> "Name of software used to generate the information contained in the file. String";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isCDE> 11529072 .
+
+<http://syn.org/mc2/seqLevel3/Workflow_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Workflow Type";
+	<http://purl.org/dc/terms/description> "Type of computational workflow used to generate the file.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/seqLevel3/Workflow_Parameter_Description> <http://www.w3.org/2000/01/rdf-schema#label> "Workflow Parameter Description";
+	<http://purl.org/dc/terms/description> "Link or text description of flags or options provided to the workflow used to generate the file.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/seqLevel3/Workflow_Link> <http://www.w3.org/2000/01/rdf-schema#label> "Workflow Link";
+	<http://purl.org/dc/terms/description> "Workflow Link";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/seqLevel3/SequencingLevel3_id> <http://www.w3.org/2000/01/rdf-schema#label> "SequencingLevel3_id";
+	<http://purl.org/dc/terms/description> "A unique identifier used by schematic for record updates and as a reference key in other schemas";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/seqLevel3/NGS_Unique_Probe_Count> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Unique Probe Count";
+	<http://purl.org/dc/terms/description> "Total number of unique probes reported.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/seqLevel3/NGS_Unique_Target_Count> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Unique Target Count";
+	<http://purl.org/dc/terms/description> "Total number of unique genes reported.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/seqLevel3/NGS_Matrix_Type> <http://www.w3.org/2000/01/rdf-schema#label> "NGS Matrix Type";
+	<http://purl.org/dc/terms/description> "Type of count data stored in matrix.";
+	<http://syn.org/node> <http://syn.org/mc2/seqLevel3>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/sharingPlan/GrantView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "GrantView Key";
+	<http://purl.org/dc/terms/description> "Unique GrantView_id foreign key(s) that group the resource with other components, as part of the same grant-associated collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/sharingPlan/Study_Key> <http://www.w3.org/2000/01/rdf-schema#label> "Study Key";
+	<http://purl.org/dc/terms/description> "The unique Study_id foreign keys associated with the resource, found in the grant Study information. Used to group the resource with other components. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/sharingPlan/DatasetView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "DatasetView Key";
+	<http://purl.org/dc/terms/description> "Unique DatasetView_id foreign key(s) that link metadata entries as part of the same collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Name> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Name";
+	<http://purl.org/dc/terms/description> "Name of the dataset";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/sharingPlan> .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Alias> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Alias";
+	<http://purl.org/dc/terms/description> "Alias of the dataset. For Synapse storage, the Synapse id associated with the storage folder should be used. Must be unique.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Assay> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Assay";
+	<http://purl.org/dc/terms/description> "The type of data contained in this group of files. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/sharingPlan> .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Species> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Species";
+	<http://purl.org/dc/terms/description> "The species the data was collected on. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "array[string;enum]";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/sharingPlan> .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Tumor_Type> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Tumor Type";
+	<http://purl.org/dc/terms/description> "The tumor type(s), if applicable, of the data collected on. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Tissue> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Tissue";
+	<http://purl.org/dc/terms/description> "Tissue type(s) associated with the dataset. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_File_Formats> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset File Formats";
+	<http://purl.org/dc/terms/description> "The list of extensions (e.g., csv, fastq, geojson, qpath, etc.) associated with files that should be included in the dataset. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/sharingPlan/DataDSP_id> <http://www.w3.org/2000/01/rdf-schema#label> "DataDSP_id";
+	<http://purl.org/dc/terms/description> "A unique primary key that enables record updates using schematic.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Level> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Level";
+	<http://purl.org/dc/terms/description> "The level of processing associated with the dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string;enum" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Number_of_Files> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Number of Files";
+	<http://purl.org/dc/terms/description> "The number of files that will be uploaded as part of this dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Number_of_Samples> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Number of Samples";
+	<http://purl.org/dc/terms/description> "The number of biospecimens associated with the files included in the dataset";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Number_of_Participants> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Number of Participants";
+	<http://purl.org/dc/terms/description> "The number of individuals or model organisms from which samples were collected to generate the dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Storage_Size> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Storage Size";
+	<http://purl.org/dc/terms/description> "The expected total storage space required for the dataset in gigabytes (GB)";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "integer" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Planned_Upload_Date> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Planned Upload Date";
+	<http://purl.org/dc/terms/description> "A non-binding, estimated date by which the files are expected to be uploaded to a repository.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/sharingPlan> .
+
+<http://syn.org/mc2/sharingPlan/DSP_Planned_Release_Date> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Planned Release Date";
+	<http://purl.org/dc/terms/description> "The projected date that marks the end of any requested or required sharing embargo for the dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Grant_Number> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Grant Number";
+	<http://purl.org/dc/terms/description> "Grant number(s) associated with the dataset's development. Multiple values permitted, comma separated.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/sharingPlan> .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Url> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Url";
+	<http://purl.org/dc/terms/description> "The url where the dataset is or will be stored. For Synapse storage, the Synapse url or doi associated with the dataset storage folder should be used.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Data_Use_Codes> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Data Use Codes";
+	<http://purl.org/dc/terms/description> "DUO code - A data item that is used to indicate consent permissions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be removed, stored or used. Available DUO code definitions can be found here: https://mc2-center.github.io/data-models/valid_values/sharingPlans/#attribute-dsp-data-use-codes";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "array[string;enum]" .
+
+<http://syn.org/mc2/sharingPlan/DSP_IRB_Form> <http://www.w3.org/2000/01/rdf-schema#label> "DSP IRB Form";
+	<http://purl.org/dc/terms/description> "The Synapse Id for the executed IRB protocol or exemption document that was uploaded to Synapse. Required if human-derived data was generated for this study and will be uploaded as part of this dataset";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Description> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Description";
+	<http://purl.org/dc/terms/description> "A text description of the files contained in this dataset.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Destination> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Destination";
+	<http://purl.org/dc/terms/description> "An identifier representing the repository in which this dataset is intended to be held for long term preservation.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/sharingPlan/DSP_Dataset_Metadata> <http://www.w3.org/2000/01/rdf-schema#label> "DSP Dataset Metadata";
+	<http://purl.org/dc/terms/description> "The link(s) corresponding to metadata templates that should be used to record information about this data. This field will be populated by the MC2 Center after plan submission.";
+	<http://syn.org/node> <http://syn.org/mc2/sharingPlan>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/study/Study_Name> <http://www.w3.org/2000/01/rdf-schema#label> "Study Name";
+	<http://purl.org/dc/terms/description> "Name of the study";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/study>;
+	<http://syn.org/isCDE> 11459810 .
+
+<http://syn.org/mc2/study/GrantView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "GrantView Key";
+	<http://purl.org/dc/terms/description> "Unique GrantView_id foreign key(s) that group the resource with other components, as part of the same grant-associated collection. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/study>;
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/study/ProjectView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "ProjectView Key";
+	<http://purl.org/dc/terms/description> "Unique ProjectView_id foreign key(s) that group the resource with other components, as part of the same grant-associated studies. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/study/PersonView_Key> <http://www.w3.org/2000/01/rdf-schema#label> "PersonView Key";
+	<http://purl.org/dc/terms/description> "Unique PersonView_id foreign key(s) that group the resource with other components, as part of the same person-associated studies. Please provide multiple values as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isKey> true .
+
+<http://syn.org/mc2/study/Study_Description> <http://www.w3.org/2000/01/rdf-schema#label> "Study Description";
+	<http://purl.org/dc/terms/description> "Description of the study, including the types of experimental assays, model systems, types of analysis, description of cohort, associated vulnerable populations, special categories of data, rare diseases, etc. Maps to DUOplus2.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/study>;
+	<http://syn.org/isCDE> 3444002 .
+
+<http://syn.org/mc2/study/Study_Investigator> <http://www.w3.org/2000/01/rdf-schema#label> "Study Investigator";
+	<http://purl.org/dc/terms/description> "Investigator(s) associated with the project. Multiple names should be provided as a comma-separated list.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/study> .
+
+<http://syn.org/mc2/study/Study_Reuse_Statement> <http://www.w3.org/2000/01/rdf-schema#label> "Study Reuse Statement";
+	<http://purl.org/dc/terms/description> "The funder-, contributor-, patient-, etc., derived content that includes terms, conditions, or statements associated with accessing and reusing the resource(s). Maps to DUOplus7.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/study/Study_id> <http://www.w3.org/2000/01/rdf-schema#label> "Study_id";
+	<http://purl.org/dc/terms/description> "A unique primary key that enables record updates using schematic.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/study>;
+	<http://syn.org/isKey> true;
+	<http://syn.org/isCDE> 12960571 .
+
+<http://syn.org/mc2/study/Study_Number_of_Participants> <http://www.w3.org/2000/01/rdf-schema#label> "Study Number of Participants";
+	<http://purl.org/dc/terms/description> "The number of participant instances associated with systematic investigation into a subject.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "number";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/study>;
+	<http://syn.org/isCDE> 11555662 .
+
+<http://syn.org/mc2/study/Study_De-identification_Method_Type> <http://www.w3.org/2000/01/rdf-schema#label> "Study De-identification Method Type";
+	<http://purl.org/dc/terms/description> "General description of the de-identification method. Maps to DUOplus3.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/study>;
+	<http://syn.org/isCDE> 14576319 .
+
+<http://syn.org/mc2/study/Study_De-identification_Method_Description> <http://www.w3.org/2000/01/rdf-schema#label> "Study De-identification Method Description";
+	<http://purl.org/dc/terms/description> "Description of the process of removing potentially identifying data or data elements to render data into a form that does not identify individuals and where identification is not likely to take place.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/study/Study_De-identification_Method_Software> <http://www.w3.org/2000/01/rdf-schema#label> "Study De-identification Method Software";
+	<http://purl.org/dc/terms/description> "Software that was used to de-identify the data (if used)";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/study/Study_dbGaP_Accession_Id> <http://www.w3.org/2000/01/rdf-schema#label> "Study dbGaP Accession Id";
+	<http://purl.org/dc/terms/description> "A stable unique alphanumeric identifier assigned to a study and any objects by the database of Genotypes and Phenotypes (dbGaP). Required for controlled access data being submitted to CDS/CRDC.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isCDE> 11524544 .
+
+<http://syn.org/mc2/study/Study_License> <http://www.w3.org/2000/01/rdf-schema#label> "Study License";
+	<http://purl.org/dc/terms/description> "Official or legal permission to do or own a specified thing. Studies with data that will be submitted to CDS are required to provide a license. Maps to DUOplus6.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 14902606 .
+
+<http://syn.org/mc2/study/Study_Data_Use_Codes> <http://www.w3.org/2000/01/rdf-schema#label> "Study Data Use Codes";
+	<http://purl.org/dc/terms/description> "DUO code - A data item that is used to indicate consent permissions for datasets and/or materials and relates to the purposes for which datasets and/or material might be removed, stored, or used. Available DUO code definitions can be found at mc2-center.github.io/data-models/valid_values/sharingPlans/#attribute-dsp-data-use-codes";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isCDE> 2003 .
+
+<http://syn.org/mc2/study/Study_Index_Date> <http://www.w3.org/2000/01/rdf-schema#label> "Study Index Date";
+	<http://purl.org/dc/terms/description> "The reference event associated with timepoints in this study. One of Diagnosis Date, Enrollment Date, Collection Date, or Birth Date.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string";
+	<http://syn.org/isCDE> 2004 .
+
+<http://syn.org/mc2/study/Study_Source_Geography> <http://www.w3.org/2000/01/rdf-schema#label> "Study Source Geography";
+	<http://purl.org/dc/terms/description> "The list of country(ies) where the data associated with this study was generated. Maps to DUOplus1.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/study/Study_Data_Permission> <http://www.w3.org/2000/01/rdf-schema#label> "Study Data Permission";
+	<http://purl.org/dc/terms/description> "The list of entities or objects that define or enforce data sharing permissions. Maps to DUOplus4.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string" .
+
+<http://syn.org/mc2/study/Study_Data_Tier> <http://www.w3.org/2000/01/rdf-schema#label> "Study Data Tier";
+	<http://purl.org/dc/terms/description> "The access tier(s) associated with the data in this study. Maps to DUOplus5.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "string;enum";
+	<http://syn.org/isCDE> 11555664 .
+
+<http://syn.org/mc2/study/Study_Number_of_Samples> <http://www.w3.org/2000/01/rdf-schema#label> "Study Number of Samples";
+	<http://purl.org/dc/terms/description> "The number of specimens associated with systematic investigation into a subject.";
+	<http://syn.org/node> <http://syn.org/mc2/study>;
+	<http://syn.org/type> "integer";
+	<http://syn.org/requiredBy> <http://syn.org/mc2/study>;
+	<http://syn.org/isCDE> 11555663 .
+
