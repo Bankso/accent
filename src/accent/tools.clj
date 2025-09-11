@@ -293,7 +293,7 @@
    :properties 
    {"attribute_uri" 
     {:type "string" 
-     :description "The attribute URI, generally of the format '<http://syn.org/{data_standard}/{template}>', e.g. '<http://syn.org/gdc/sample>'."}}
+     :description "The attribute URI, generally of the format '<http://syn.org/{data_standard}/{template}>', e.g. '<http://syn.org/gc/sample>'."}}
    :required ["attribute_uri"]}
   :category #{:data-mapping}
   :permissions #{:read}
@@ -342,8 +342,8 @@
    :properties 
    {"standard_uri" 
     {:type "string" 
-     :enum ["<http://syn.org/gdc>"] 
-     :description "The data standard URI, of the format '<http://syn.org/{data_standard}>', i.e. '<http://syn.org/gdc>'. Currently, only GDC standard is supported."}}
+     :enum ["<http://syn.org/gc>"] 
+     :description "The data standard URI, of the format '<http://syn.org/{data_standard}>', i.e. '<http://syn.org/gc>'. Currently, only GC standard is supported."}}
    :required ["standard_uri"]}
   :category #{:data-mapping}
   :permissions #{:read}
