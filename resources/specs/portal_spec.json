@@ -1,0 +1,391 @@
+{
+  "name": "synapse_portal_navigation",
+  "version": "0.1.0",
+  "description": "Mapping spec for an LLM agent that generates navigation actions for Synapse-style data access portals, using full-text table queries as the underlying search primitive.",
+  "task_type": "portal_navigation",
+  "portal": {
+    "id": "synapse",
+    "label": "Sage Synapse",
+    "base_ui_url": "https://www.synapse.org",
+    "base_api_url": "https://repo-prod.prod.sagebase.org/repo/v1"
+  },
+
+  "llm_output_schema": {
+    "type": "object",
+    "required": [
+      "intent",
+      "portal_id",
+      "navigation_target",
+      "query",
+      "http_request"
+    ],
+    "properties": {
+      "intent": {
+        "type": "string",
+        "description": "High-level navigation intent.",
+        "enum": [
+          "open_portal_home",
+          "search_table_full_text",
+          "open_entity",
+          "refine_search",
+          "paginate",
+          "inspect_result"
+        ]
+      },
+      "portal_id": {
+        "type": "string",
+        "const": "synapse",
+        "description": "Portal identifier; used to route to the correct navigation implementation."
+      },
+      "navigation_target": {
+        "type": "object",
+        "required": ["entity_type"],
+        "properties": {
+          "entity_type": {
+            "type": "string",
+            "description": "Type of target within the portal UI.",
+            "enum": [
+              "table",
+              "view",
+              "dataset",
+              "project",
+              "file",
+              "generic_search"
+            ]
+          },
+          "entity_id": {
+            "type": "string",
+            "description": "Synapse ID for the underlying table or view to query (e.g., syn12345678). Required for table/view navigation.",
+            "pattern": "^syn[0-9]+$"
+          },
+          "ui_path": {
+            "type": "string",
+            "description": "Optional UI path/fragment for the portal (e.g., '#!Synapse:syn12345678/tables')."
+          }
+        },
+        "description": "Where in the portal the navigation should land."
+      },
+      "query": {
+        "type": "object",
+        "required": ["mode"],
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "full_text",
+              "boolean_full_text",
+              "structured_filters_only",
+              "direct_sql"
+            ],
+            "description": "How to construct the WHERE clause in the Synapse Table SQL."
+          },
+          "natural_language": {
+            "type": "string",
+            "description": "User’s original search phrase or a concise paraphrase."
+          },
+          "full_text_expression": {
+            "type": "string",
+            "description": "Raw expression passed to text_matches('...') for full text search, without surrounding quotes."
+          },
+          "filters": {
+            "type": "array",
+            "description": "Structured filters to be mapped to SQL WHERE predicates.",
+            "items": {
+              "type": "object",
+              "required": ["column", "operator", "value"],
+              "properties": {
+                "column": {
+                  "type": "string",
+                  "description": "Column name as it appears in the Synapse table."
+                },
+                "operator": {
+                  "type": "string",
+                  "description": "SQL comparison operator.",
+                  "enum": [
+                    "=",
+                    "<>",
+                    ">",
+                    ">=",
+                    "<",
+                    "<=",
+                    "LIKE",
+                    "IN",
+                    "BETWEEN",
+                    "IS NULL",
+                    "IS NOT NULL"
+                  ]
+                },
+                "value": {
+                  "description": "Literal or list of literals to plug into the SQL predicate. For IN/BETWEEN, use an array.",
+                  "oneOf": [
+                    { "type": "string" },
+                    { "type": "number" },
+                    { "type": "boolean" },
+                    {
+                      "type": "array",
+                      "items": {
+                        "oneOf": [
+                          { "type": "string" },
+                          { "type": "number" },
+                          { "type": "boolean" }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "sort": {
+            "type": "object",
+            "required": ["column", "direction"],
+            "properties": {
+              "column": {
+                "type": "string",
+                "description": "Column to order by."
+              },
+              "direction": {
+                "type": "string",
+                "enum": ["ASC", "DESC"],
+                "description": "Sort direction."
+              }
+            }
+          },
+          "pagination": {
+            "type": "object",
+            "required": ["limit", "offset"],
+            "properties": {
+              "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1000,
+                "description": "LIMIT for the SQL query."
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "OFFSET for the SQL query."
+              }
+            }
+          },
+          "sql": {
+            "type": "string",
+            "description": "The final SQL string to be sent to Synapse, e.g. `SELECT * FROM syn123 WHERE text_matches('brain AND RNAseq') AND disease = 'Parkinson''s' LIMIT 50 OFFSET 0`."
+          }
+        },
+        "description": "Query semantics and final SQL string for the Synapse Table query."
+      },
+      "http_request": {
+        "type": "object",
+        "required": ["method", "url", "body"],
+        "properties": {
+          "method": {
+            "type": "string",
+            "const": "POST",
+            "description": "HTTP method used to call the Synapse Table query endpoint."
+          },
+          "url": {
+            "type": "string",
+            "description": "Concrete URL to invoke, including the entity ID path segment, e.g. `https://repo-prod.prod.sagebase.org/repo/v1/entity/syn12345678/table/query/async/start`."
+          },
+          "body": {
+            "type": "object",
+            "required": ["concreteType", "entityId", "partMask", "query"],
+            "properties": {
+              "concreteType": {
+                "type": "string",
+                "const": "org.sagebionetworks.repo.model.table.QueryBundleRequest"
+              },
+              "entityId": {
+                "type": "string",
+                "pattern": "^syn[0-9]+$",
+                "description": "Same as navigation_target.entity_id."
+              },
+              "partMask": {
+                "type": "integer",
+                "description": "Bitmask describing which parts of the QueryBundle to return (e.g. 0x3FF for all parts)."
+              },
+              "query": {
+                "type": "object",
+                "required": ["sql"],
+                "properties": {
+                  "sql": {
+                    "type": "string",
+                    "description": "SQL statement, consistent with query.sql."
+                  },
+                  "includeEntityEtag": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "isConsistent": {
+                    "type": "boolean",
+                    "default": true
+                  },
+                  "selectedFacets": {
+                    "type": "array",
+                    "description": "Optional facet filters if the table uses faceted columns."
+                  }
+                },
+                "description": "Synapse QuerySpecification embedded inside the QueryBundleRequest."
+              }
+            },
+            "description": "Concrete JSON body for POST /entity/{id}/table/query/async/start."
+          }
+        },
+        "description": "The actual HTTP request to execute (for an API client) or to embed into a UI navigation URL builder."
+      },
+      "ui_url": {
+        "type": "string",
+        "description": "Optional: a portal UI URL that, when opened in a browser, reproduces the same logical query (e.g., by encoding the SQL or query as a URL fragment)."
+      },
+      "explanation": {
+        "type": "string",
+        "description": "Natural language rationale for the constructed navigation and query, including key assumptions (e.g., which table/entity was chosen)."
+      }
+    }
+  },
+
+  "url_construction": {
+    "table_query_endpoint_template": "{base_api_url}/entity/{entity_id}/table/query/async/start",
+    "full_text_where_templates": {
+      "full_text": "text_matches('{expression}')",
+      "boolean_full_text": "text_matches('{expression}' IN BOOLEAN MODE)"
+    },
+    "sql_templates": {
+      "base_full_text_query": "SELECT * FROM {entity_id} WHERE {full_text_predicate}{and_filter_clauses}{order_by_clause}{limit_offset_clause}",
+      "base_structured_only_query": "SELECT * FROM {entity_id}{where_clause}{order_by_clause}{limit_offset_clause}"
+    },
+    "clauses": {
+      "and_filter_clauses": {
+        "joiner": " AND ",
+        "prefix": " AND ",
+        "empty": ""
+      },
+      "where_clause": {
+        "prefix": " WHERE ",
+        "empty": ""
+      },
+      "order_by_clause": {
+        "template": " ORDER BY {column} {direction}",
+        "empty": ""
+      },
+      "limit_offset_clause": {
+        "template": " LIMIT {limit} OFFSET {offset}",
+        "empty": ""
+      }
+    },
+    "defaults": {
+      "limit": 50,
+      "offset": 0,
+      "partMask_all_parts": 1023,
+      "sort_column": null,
+      "sort_direction": "ASC"
+    }
+  },
+
+  "semantic_dimensions": {
+    "full_text": {
+      "description": "Unstructured search phrase provided by the user.",
+      "maps_to": "query.full_text_expression"
+    },
+    "disease": {
+      "description": "Disease label filter (if the table has a disease column).",
+      "maps_to": {
+        "type": "filter",
+        "column": "disease",
+        "operator": "="
+      }
+    },
+    "data_type": {
+      "description": "Data modality, e.g. RNAseq, WGS, methylation.",
+      "maps_to": {
+        "type": "filter",
+        "column": "dataType",
+        "operator": "="
+      }
+    },
+    "assay": {
+      "description": "Assay or platform label.",
+      "maps_to": {
+        "type": "filter",
+        "column": "assay",
+        "operator": "="
+      }
+    },
+    "species": {
+      "description": "Organism species filter.",
+      "maps_to": {
+        "type": "filter",
+        "column": "species",
+        "operator": "="
+      }
+    },
+    "consortium": {
+      "description": "Project/consortium filter (if present).",
+      "maps_to": {
+        "type": "filter",
+        "column": "consortium",
+        "operator": "="
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "id": "brain_rnaseq_full_text",
+      "user_utterance": "Show me Parkinson's disease RNAseq data in brain tissue",
+      "expected_output": {
+        "intent": "search_table_full_text",
+        "portal_id": "synapse",
+        "navigation_target": {
+          "entity_type": "view",
+          "entity_id": "syn12345678",
+          "ui_path": "#!Synapse:syn12345678/tables"
+        },
+        "query": {
+          "mode": "boolean_full_text",
+          "natural_language": "Parkinson's disease RNAseq data in brain tissue",
+          "full_text_expression": "\"Parkinson\" AND \"RNAseq\" AND brain",
+          "filters": [
+            {
+              "column": "disease",
+              "operator": "=",
+              "value": "Parkinson's disease"
+            },
+            {
+              "column": "tissue",
+              "operator": "=",
+              "value": "brain"
+            }
+          ],
+          "sort": {
+            "column": "createdOn",
+            "direction": "DESC"
+          },
+          "pagination": {
+            "limit": 50,
+            "offset": 0
+          },
+          "sql": "SELECT * FROM syn12345678 WHERE text_matches('\"Parkinson\" AND \"RNAseq\" AND brain' IN BOOLEAN MODE) AND disease = 'Parkinson''s disease' AND tissue = 'brain' ORDER BY createdOn DESC LIMIT 50 OFFSET 0"
+        },
+        "http_request": {
+          "method": "POST",
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn12345678/table/query/async/start",
+          "body": {
+            "concreteType": "org.sagebionetworks.repo.model.table.QueryBundleRequest",
+            "entityId": "syn12345678",
+            "partMask": 1023,
+            "query": {
+              "sql": "SELECT * FROM syn12345678 WHERE text_matches('\"Parkinson\" AND \"RNAseq\" AND brain' IN BOOLEAN MODE) AND disease = 'Parkinson''s disease' AND tissue = 'brain' ORDER BY createdOn DESC LIMIT 50 OFFSET 0",
+              "includeEntityEtag": false,
+              "isConsistent": true,
+              "selectedFacets": []
+            }
+          }
+        },
+        "ui_url": "https://www.synapse.org/#!Synapse:syn12345678/tables", 
+        "explanation": "Navigate to the main data view syn12345678, then run a full-text boolean search for Parkinson + RNAseq + brain, constrained to rows where disease='Parkinson''s disease' and tissue='brain'."
+      }
+    }
+  ]
+}
